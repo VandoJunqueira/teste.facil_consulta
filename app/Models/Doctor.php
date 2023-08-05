@@ -17,5 +17,11 @@ class Doctor extends Model
     protected $fillable = [
         'name',
         'specialty',
+        'city_id',
     ];
+
+    public function patients()
+    {
+        return $this->belongsToMany(Patient::class);
+    }
 }

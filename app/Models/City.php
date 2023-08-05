@@ -9,7 +9,7 @@ class City extends Model
 {
     use HasFactory;
 
-     /**
+    /**
      * The attributes that are mass assignable.
      *
      * @var array<int, string>
@@ -18,4 +18,9 @@ class City extends Model
         'name',
         'state',
     ];
+
+    public function doctors()
+    {
+        return $this->hasMany(Doctor::class);
+    }
 }
