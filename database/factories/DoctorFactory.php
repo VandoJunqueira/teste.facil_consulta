@@ -2,10 +2,11 @@
 
 namespace Database\Factories;
 
+use App\Models\City;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\User>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Doctor>
  */
 class DoctorFactory extends Factory
 {
@@ -42,6 +43,7 @@ class DoctorFactory extends Factory
         return [
             'name' => $this->faker->name,
             'specialty' => $this->faker->randomElement($medicalSpecialties),
+            'city_id' => rand(1, City::count())
         ];
     }
 }

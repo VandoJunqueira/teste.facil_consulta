@@ -2,17 +2,17 @@
 
 namespace Database\Seeders;
 
-use App\Models\City;
+use App\Models\Patient;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class CitySeeder extends Seeder
+class PatientSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        City::factory()->times(5)->create();
+        Patient::factory()->times(100)->create();
     }
 }

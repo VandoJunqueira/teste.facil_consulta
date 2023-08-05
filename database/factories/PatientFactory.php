@@ -5,7 +5,7 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Model>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Patient>
  */
 class PatientFactory extends Factory
 {
@@ -18,7 +18,7 @@ class PatientFactory extends Factory
     {
         return [
             'name' => $this->faker->name,
-            'cpf' => $this->faker->unique()->rg,
+            'cpf' => $this->faker->unique()->cpf,
             'phone' => $this->faker->unique()->phoneNumber,
         ];
     }
