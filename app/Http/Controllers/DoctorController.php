@@ -26,7 +26,7 @@ class DoctorController extends Controller
     public function index()
     {
         try {
-            $doctors = $this->doctorRepository->all();
+            $doctors = $this->doctorRepository->all(['id', 'name', 'specialty', 'city_id']);
 
             return response()->json($doctors);
         } catch (\Throwable $th) {

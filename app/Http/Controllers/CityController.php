@@ -24,7 +24,7 @@ class CityController extends Controller
     public function index()
     {
         try {
-            $cities = $this->cityRepository->all();
+            $cities = $this->cityRepository->all(['id', 'name', 'state']);
 
             return response()->json($cities);
         } catch (\Throwable $th) {
@@ -45,7 +45,9 @@ class CityController extends Controller
                 return response()->json(['message' => 'Cidade não encontrada'], 404);
             }
 
-            return response()->json($city->doctors);
+            $doctors = $city->doctors()->select('id', 'name', 'specialty', 'city_id')->get();
+
+            return response()->json($doctors);
         } catch (\Throwable $th) {
             return response()->json(['message' => 'Ocorreu um erro.'], 505);
         }

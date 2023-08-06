@@ -32,9 +32,9 @@ class Repository
      *
      * @return Model
      */
-    public function all()
+    public function all($columns = ['*'])
     {
-        return $this->model->all();
+        return $this->model->all($columns);
     }
 
     /**
